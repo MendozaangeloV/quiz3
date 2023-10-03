@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Addition Example</title>
+   <link href="stylesngpages.css" rel="stylesheet"/>
+</head>
+<body>
+<h2>ADDITION</h2>
+<div class="container">
+    <label for="num1">Number 1:</label>
+    <input type="number" id="num1"  onfocus="this.value=''" value="0">
+    
+    <label for="num2">Number 2:</label>
+    <input type="number" id="num2" onfocus="this.value=''" value="0"><br/><br/>
+
+    <button onclick="addNumbers()">Add</button> <button onclick="ClearFields()">Clear</button><br/><br/>
+    <h3>Result: <span id="result">0</span></h3>
+    <button class="back" onclick="goToHome()">Go to Home</button>
+</div>
+
+<p>Submitted by: Angelo V. Mendoza</p>
+
+<script>
+    function goToHome () {
+     window.location.href = "index.html"}
+    function addNumbers() {
+        var num1 = parseFloat(document.getElementById('num1').value);
+        var num2 = parseFloat(document.getElementById('num2').value);
+
+  if (isNaN(num1) || isNaN(num2)) {
+        alert("Please enter valid numbers in both fields.");
+        return;
+    }
+
+        var result = num1 + num2;
+        document.getElementById('result').innerHTML =  result ;
+    }
+
+function ClearFields() {
+
+     document.getElementById("num1").value = "";
+     document.getElementById("num2").value = "";
+     document.getElementById("result").innerHTML = "0";
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>positive or negative</title>
+   <link href="stylesngpages.css" rel="stylesheet"/>
+</head>
+<body>
+<h2>A JavaScript that check if your number is POSITIVE or NEGATIVE</h2>
+
+<div class="top-box">
+
+    <p class="add">Positive or Negative</p>
+</div>
+        
+    
+        <div class="container">
+
+            <label for="num1">Enter a number</label>
+            <input type="number" id="num1"/><br/><br/>
+    
+            <p class="result">Your number is: <span id="result"></span></p><br/><br/>
+            
+            <button class="check" onclick="checks()">CHECK</button><br/><br/>
+            <button class="reset" onclick="resetInputs()">RESET</button><br/><br/>
+            <button class="back" onclick="goToHome()">Go to Home</button><br/><br/>
+
+        </div>
+        
+        <script>
+
+            function goToHome () {
+                window.location.href = "index.html"}
+
+            function checks() {
+            var A = parseFloat(document.getElementById('num1').value);
+
+
+            if(A > 0){
+                document.getElementById('result').innerHTML= "POSITIVE"  
+            }
+
+        else{
+            document.getElementById('result').innerHTML= "NEGATIVE"
+        }
+        }
+
+        function resetInputs() {
+            document.getElementById('num1').value = ''; 
+            document.getElementById('result').innerHTML = '';
+              
+        }
+
+        </script>
+    </body>
+    </html>
+    

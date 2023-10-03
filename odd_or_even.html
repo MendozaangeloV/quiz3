@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Comparing Two Numbers</title>
+<link href="stylesngpages.css" rel="stylesheet"/>
+</head>
+<body>
+<h2>A JavaScript that identify if you number is ODD or EVEN</h2>
+<div class="top-box">
+    <p class="add">Even or Odd</p>
+</div>
+
+<div class="container">
+    <label for="num1">Enter a number:</label>
+    <input type="number" id="num1"><br><br>
+
+    <p class="result">Your number is: <span id="result"></span></p><br><br>
+
+    <button class="check" onclick="check()">CHECK</button><br><br>
+    <button class="reset" onclick="resetInputs()">RESET</button><br><br>
+    <button class="back" onclick="goToHome()">Go to Home</button><br><br>
+</div>
+
+<script>
+
+function check() {
+    var A = parseFloat(document.getElementById('num1').value);
+    var result = isEvenOrOdd(A);
+    
+}
+
+function isEvenOrOdd(A) {
+    if (A % 2 === 0) {
+        document.getElementById('result').innerHTML= "Even";
+    } else {
+        document.getElementById('result').innerHTML= "Odd";
+    }
+}
+
+function resetInputs() {
+    document.getElementById('num1').value = ''; 
+    document.getElementById('result').innerHTML = '';
+}
+
+function goToHome() {
+    window.location.href = "index.html";
+}
+</script>
+</body>
+</html>

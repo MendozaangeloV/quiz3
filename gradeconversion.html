@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Comparing Two Numbers</title>
+<link href="stylesngpages.css" rel="stylesheet"/>
+</head>
+<body>
+<h2>A JavaScript that converts grade</h2>
+<div class="top-box">
+        <p class="add">Grade Conversion</p>
+    </div>
+    <div class="container">
+
+    <label for="numOfCorrect">Enter the number of correct answers:</label>
+    <input type="number" id="numOfCorrect"><br/><br/>
+    
+    <label for="numOfItems">Enter the total number of items:</label><br/><br/>
+    <input type="number" id="numOfItems">
+    
+    
+    <p class="result" id="result"></p>
+
+    <button class="check" onclick="convertToGrade()">Convert</button><br/><br/>
+    <button class="reset" onclick="resetInputs()">RESET</button><br/><br/>
+    <button class="back" onclick="goToHome()">Go to Home</button>
+
+    <script>
+        function convertToGrade() {
+            var numOfCorrect = parseInt(document.getElementById("numOfCorrect").value);
+            var numOfItems = parseInt(document.getElementById("numOfItems").value);
+            var resultParagraph = document.getElementById("result");
+
+            if (isNaN(numOfCorrect) || isNaN(numOfItems) || numOfCorrect < 0 || numOfItems < 0 || numOfCorrect > numOfItems || numOfItems > 100) {
+                resultParagraph.textContent = "Invalid input. Please enter valid values.";
+                return;
+            }
+
+            var egrade = (numOfCorrect / numOfItems) * 60 + 40;
+            
+            var grade;
+            if (egrade >= 75 && egrade <= 80) {
+                grade = "NOT BAD";
+            } else if (egrade >= 81 && egrade <= 85) {
+                grade = "GOOD";
+            } else if (egrade >= 86 && egrade <= 90) {
+                grade = "VERY GOOD";
+            } else if (egrade >= 91 && egrade <= 95) {
+                grade = "MAY FUTURE KA";
+            } else if (egrade >= 96 && egrade <= 100) {
+                grade = "PDE NA MAG ASAWA";
+            } else {
+                grade = "SORRY, KULANG PA SA EFFORT...";
+            }
+
+            resultParagraph.textContent = "Equivalent grade: " + egrade.toFixed(2) + " - " + grade;
+        }
+
+        function resetInputs() {
+            document.getElementById('numOfCorrect').value = ''; 
+            document.getElementById('numOfItems').value = '';
+            document.getElementById('result').innerHTML = '';
+              
+        }
+
+        function goToHome () {
+                window.location.href = "index.html"}
+
+    </script>
+    </div>
+</body>
+</html>
